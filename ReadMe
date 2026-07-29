@@ -1,0 +1,121 @@
+# Task API
+
+A simple RESTful CRUD API built with FastAPI for managing tasks. This project was created as part of the FlyRank Backend Internship - Week 2 Assignment A1.
+
+The API stores tasks in memory and supports creating, reading, updating, and deleting tasks. It also includes automatic interactive API documentation using Swagger UI.
+
+## Features
+
+- Create a task
+- Get all tasks
+- Get a single task by ID
+- Update a task
+- Delete a task
+- Interactive Swagger UI documentation
+
+## Technologies Used
+
+- Python 3.10+
+- FastAPI
+- Uvicorn
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/vicsblu/crud.git
+```
+
+Navigate into the project folder:
+
+```bash
+cd flyrank-crud-api
+```
+
+Install dependencies:
+
+```bash
+pip install fastapi uvicorn
+```
+
+## Running the Application
+
+Start the server:
+
+```bash
+uvicorn main:app --reload
+```
+
+The API will be available at:
+
+```
+http://127.0.0.1:8000
+```
+
+Swagger UI:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | / | API information |
+| GET | /health | Health check |
+| GET | /tasks | Get all tasks |
+| GET | /tasks/{id} | Get a task by ID |
+| POST | /tasks | Create a new task |
+| PUT | /tasks/{id} | Update a task |
+| DELETE | /tasks/{id} | Delete a task |
+
+## Example cURL Request
+
+Create a task:
+
+```bash
+curl -X POST "http://127.0.0.1:8000/tasks" \
+-H "Content-Type: application/json" \
+-d "{\"title\":\"Learn FastAPI\"}"
+```
+
+Example Response:
+
+```json
+{
+    "id": 4,
+    "title": "Learn FastAPI",
+    "done": false
+}
+```
+
+## Swagger UI Screenshot
+
+```
+docs/swagger.png
+```
+
+
+## Project Structure
+
+```
+.
+├── main.py
+├── README.md
+└── Swagger.png
+```
+
+## Status Codes
+
+- **200** OK
+- **201** Created
+- **204** No Content
+- **404** Not Found
+- **422** Validation Error (FastAPI)
+
+## Author
+Victor Oluwadamilare Oguntoyinbo
+
+FlyRank Backend Internship - Week 2 Assignment
